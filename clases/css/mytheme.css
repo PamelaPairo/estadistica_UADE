@@ -27,6 +27,7 @@
 --my-coral:          #903030;
 --my-red:            #600018;
 --my-pink:           #c09090;
+--orange:            #e35c38;
 }
 
 /*-- LINKS/ANCHORS --*/
@@ -38,7 +39,7 @@ a:hover { border-bottom: none; }
 
 /*-- HEADINGS --*/
 .remark-slide-content h1 {
-  color:              var(--my-blue);
+  color:              var(--DarkGreen);
   font-weight:        400;
   line-height:        1em;
 }
@@ -47,7 +48,7 @@ a:hover { border-bottom: none; }
   /*font-size:          35px;*/
   /*font-size:          1.4em;*/
   font-weight:        400;
-  color:              var(--my-blue);
+  color:              var(--DarkGreen);
   line-height:        1em;
   letter-spacing:     0.02em;
 }
@@ -55,14 +56,14 @@ a:hover { border-bottom: none; }
 .remark-slide-content h3 {
   /*font-size:          1em;*/
   font-weight:        500;
-  color:              var(--my-blue);
+  color:              var(--DarkGreen);
   line-height:        1em;
 }
 
 /*-- PARAGRAPH TEXT --*/
 .remark-slide-content {
-  font-size:          1.6rem;
-  line-height:        1.2em;
+  font-size:          1.5rem;
+  line-height:        1em;
 }
 
 /*-- HORIZONTAL BARS --*/
@@ -78,13 +79,13 @@ hr {
 
 /*-- Slide background and text (inverse) --*/
 .inverse {
-  background-color:   var(--my-blue);
-  color:              var(--PaleGrey);
+  background-color:   var(--DarkGreen);
+  color:              var(--Black);
   text-shadow:        none;
 }
 
 /*-- Headings (inverse) --*/
-.inverse h1, .inverse h2, .inverse h3 { color: var(--PaleGrey); }
+.inverse h1, .inverse h2, .inverse h3 { color: var(--White); }
 
 .inverse a {
   color:              var(--PaleGrey);
@@ -213,6 +214,7 @@ pre code {
 
 /*-- Custom classes for text emphasis --*/
 .blue       { color:  var(--Blue) }
+.orange     { color:  var(--orange)}
 .green      { color:  var(--Green) }
 .pink       { color:  var(--Pink) }
 .red        { color:  var(--Red) }

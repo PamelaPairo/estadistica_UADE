@@ -25,6 +25,7 @@ options(htmltools.dir.version = FALSE)
 library(knitr)
 library(tidyverse)
 library(xaringanExtra)
+
 # set default options
 opts_chunk$set(echo=FALSE,
                collapse = TRUE,
@@ -32,6 +33,7 @@ opts_chunk$set(echo=FALSE,
                fig.height = 4,
                dpi = 300)
 xaringanExtra::use_tile_view()
+xaringanExtra::use_tachyons()
 xaringanExtra::use_clipboard()
 xaringanExtra::use_broadcast()
 xaringanExtra::use_share_again()
@@ -56,37 +58,61 @@ background-size: cover
 .palegrey[.right[.footnote[Graphic by [Katie](https://www.rawpixel.com/image/2357171/free-illustration-image-abstract-background-color)]]]
 
 ---
-class: inverse, middle, center
+# En la clase de hoy:
 
-# Why do you need a personal website?
+- Concepto de inferencia. Población y muestra. 
 
-<ion-icon name="checkmark-outline"></ion-icon>
+- Inferencia sobre la media con y sin varianza conocida
+
+- Inferencia en el proceso Bernoulli 
+
+- Intervalos de confianza 
+
+--
+
+### .orange[**Recreo**] `r emo::ji("coffee")`🧉
+
+--
+
+- Problemas de aplicación en **R**
+
+---
+
+#Estadística Inferencial
+
+.bg-washed-light-purple.b--orange.ba.bw2.br3.shadow-2.ph4.mt5[
+Permite estimar parámetros poblacionales
+
+Probar hipótesis formuladas por sobre una población
+
+Construir modelos estadísticos y efectuar predicciones
+]
+---
+# Recordar:
+
+**Población**: es el conjunto de todos los individuos de interés. Normalmente es demasiado grande para poder abarcarla toda = censo
+
+--
+
+**Muestra**: es un subconjunto representativo de la población y es sobre el que realmente hacemos las observaciones
+
+--
+
+**Variable**: es la característica de interés que es medida en cada uno de los individuos
+
+--
+
+**Observación o dato**: es el valor particular que toma la variable en cada individuo
+
+--
+
+**Unidad Experimental**: es la menor unidad de la cual se obtiene una observación independiente
+
 ---
 
 # Some benefits
 
-`r emo::ji("heavy_check_mark")`  Another way to practice your communication skills
+`r emo::ji("heavy_check_mark")` 
 
---
 
-`r emo::ji("heavy_check_mark")`  Exchange knowledge with colleagues and expansion of your networking
-
---
-
-`r emo::ji("heavy_check_mark")`  Sharing ideas and experiences can be useful for the community
-
---
-
-`r emo::ji("heavy_check_mark")`  A platform to connect with the world.
-
----
-background-image: url(images/language.jpg)
-background-size: cover
-class: center, middle, inverse
-
-##.my-hot-DarkBlue[Overcoming]
-##.my-hot-DarkBlue[language barriers with]
-#.my-hot-DarkBlue[a multilingual website]
-
-.palegrey[.left[.footnote[Graphic by [Hannah Wright](https://unsplash.com/s/photos/language?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText")]]]
 
