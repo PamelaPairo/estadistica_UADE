@@ -1,0 +1,92 @@
+---
+title: "Estadística Inferencial"
+author: "Pamela E. Pairo"
+output:
+  xaringan::moon_reader:
+    css: 
+      - css/mytheme.css
+      - css/mytheme-font.css
+    lib_dir: libs
+    seal: false
+    self_contained: true
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+library(xaringanExtra)
+# set default options
+opts_chunk$set(echo=FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+xaringanExtra::use_tile_view()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_broadcast()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter", "linkedin", "pocket")
+)
+
+```
+
+class: title-slide, center, middle
+background-image: url(img/frame.jpg)
+background-size: cover
+
+.right-column[
+# `r rmarkdown::metadata$title`
+### `r rmarkdown::metadata$subtitle`
+
+**`r rmarkdown::metadata$author`**<br>
+`r rmarkdown::metadata$date`
+]
+
+.palegrey[.right[.footnote[Graphic by [Katie](https://www.rawpixel.com/image/2357171/free-illustration-image-abstract-background-color)]]]
+
+---
+class: inverse, middle, center
+
+# Why do you need a personal website?
+
+<ion-icon name="checkmark-outline"></ion-icon>
+---
+
+# Some benefits
+
+`r emo::ji("heavy_check_mark")`  Another way to practice your communication skills
+
+--
+
+`r emo::ji("heavy_check_mark")`  Exchange knowledge with colleagues and expansion of your networking
+
+--
+
+`r emo::ji("heavy_check_mark")`  Sharing ideas and experiences can be useful for the community
+
+--
+
+`r emo::ji("heavy_check_mark")`  A platform to connect with the world.
+
+---
+background-image: url(images/language.jpg)
+background-size: cover
+class: center, middle, inverse
+
+##.my-hot-DarkBlue[Overcoming]
+##.my-hot-DarkBlue[language barriers with]
+#.my-hot-DarkBlue[a multilingual website]
+
+.palegrey[.left[.footnote[Graphic by [Hannah Wright](https://unsplash.com/s/photos/language?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText")]]]
+
