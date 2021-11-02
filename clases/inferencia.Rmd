@@ -110,8 +110,34 @@ Construir modelos estadísticos y efectuar predicciones
 
 ---
 
-# Some benefits
+## Distribución de Probabilidades
 
+**.orange[Función de densidad f(x)]** es una función que describe la distribución de probabilidades de la variable aleatoria continua x.
+
+
+.center[
+<img src="img/densidad.jpg" width="100%"/>
+]
+
+---
+# Distribución Normal
+
+.center[
+$X \sim {\sf N}(\mu, \sigma^2)$
+]
+
+```{r, fig.height = 2, fig.width=4}
+library(ggplot2)
+p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x=x)) +
+        stat_function(fun = dnorm)
+p9+ theme_bw()
+```
+
+- Media, mediana y moda coinciden.
+
+- Dominio de la variable -∞< x < ∞
+
+---
 `r emo::ji("heavy_check_mark")` 
 
 
