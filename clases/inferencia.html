@@ -8,6 +8,10 @@
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":2,"eraser_size":20}) })</script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
@@ -49,11 +53,13 @@ background-size: cover
 
 - Concepto de inferencia. Población y muestra. 
 
-- Inferencia sobre la media con y sin varianza conocida
+- Parámetros y estimadores
 
-- Inferencia en el proceso Bernoulli 
+- Distribuciones Muestrales
 
-- Intervalos de confianza 
+- Intervalos de confianza para la media con varianza conocida
+
+- Ejercitación
 
 --
 
@@ -61,7 +67,11 @@ background-size: cover
 
 --
 
-- Problemas de aplicación en **R**
+- Distribución t-student
+
+- Intervalos de confianza para la media con varianza desconocida
+
+- Ejercitación
 
 ---
 
@@ -73,6 +83,7 @@ Permite estimar parámetros poblacionales
 Probar hipótesis formuladas por sobre una población
 
 Construir modelos estadísticos y efectuar predicciones
+
 ]
 ---
 # Recordar:
@@ -95,6 +106,13 @@ Construir modelos estadísticos y efectuar predicciones
 
 **Unidad Experimental**: es la menor unidad de la cual se obtiene una observación independiente
 
+---
+class: center, middle
+###La inferencia estadística consiste en generalizar las conclusiones extraídas de una muestra sobra una población
+
+.center[
+&lt;img src="img/pob_muestra.png" width="90%"/&gt;
+]
 ---
 
 ## Distribución de Probabilidades
@@ -120,10 +138,192 @@ Construir modelos estadísticos y efectuar predicciones
 - Dominio de la variable -∞&lt; x &lt; ∞
 
 ---
-✔️ 
+#Estandarización
 
+✔️ La variable de estudio es tranformada (reescalada) en una variable normal estándar.
 
+.center[
 
+`\(\LARGE z= \frac{x- \mu}{\sigma}\)`
+
+✔️ Cuanto mas grande sea el valor de Z, mas lejos estará el valor de la media.
+
+]
+---
+# Parámetro y Estimador
+
+**.purple[Parámetro]**: se calculan sobre los N valores de la población, por lo tanto no cambian a menos que cambie la población, son constantes
+
+**.purple[Estimador]**: se calculan sobra n valores muestrales, por lo tanto varían de muestra en muestra y por lo tanto son variables aleatorias.
+
+.center[
+&lt;img src="img/pob_muestra.png" width="70%"/&gt;
+]
+---
+# Supongamos...
+
+.center[
+&lt;img src="img/tcl.png" width="100%"/&gt;
+]
+---
+## Y si se repite el procedimiento muchas veces?
+
+.center[
+&lt;img src="img/tcl_2.png" width="90%"/&gt;
+]
+---
+## Distribución muestral de `\(\overline{x}\)`
+
+.center[
+&lt;img src="img/tcl_3.png" width="80%"/&gt;
+]
+
+--
+.center[
+
+`\(\LARGE \mu_{\overline{x}}= \mu\)`
+
+`\(\LARGE \sigma_{\overline{x}}= \frac{\sigma}{\sqrt{n}}\)`
+]
+---
+# Distribución muestral
+
+.bg-washed-light-purple.b--orange.ba.bw2.br3.shadow-2.ph4.mt5[
+La distribución muestral de un estimador es la distribución de probabilidades de todos los posibles valores de un estimador que se pueden obtener extrayendo infinitas muestras aleatorias de tamaño n de la población.
+]
+
+---
+##Teorema central del límite
+
+.bg-washed-light-purple.b--orange.ba.bw2.br3.shadow-2.ph4.mt2[
+Si de una población con .orange[distribución no normal o desconocida] con media μ y desvío estándar σ se extraen infinitas muestras aleatorias de tamaño n y a cada una se ellas se le calcula el promedio X se demuestra que éste se comporta según una .orange[distribución normal si n es lo suficientemente grande.]
+]
+
+.center[
+&lt;img src="img/tcl_4.png" width="72%"/&gt;
+]
+---
+# Estimación puntual y por IC
+
+**.purple[Estimación Puntual]**: se calcula un valor a partir de la muestra a fin de estimar el parámetro.
+
+**.purple[Intervalo de Confianza]**: se calculan dos números para crear un rango de valores que se espera que contengan al parámetro con una cierta probabilidad o nivel de confianza.
+
+--
+
+.center[
+`\(\LARGE P(LI&lt; \theta &lt; LS)= 1 - \alpha\)`
+]
+
+---
+### Intervalo de confianza: Nivel de confianza
+
+- Probabilidad de que el intervalo contenga al parámetro (1- `\(\alpha\)`)
+
+--
+
+- Se fija a priori (0.9, 0.95, 0.99)
+
+--
+
+- `\(\alpha\)` es la probabilidad de error (NO contener al parámetro) y se la denomina riesgo
+
+.center[
+&lt;img src="img/ic.png" width="65%"/&gt;
+]
+
+---
+### IC para la media poblacional de una v.a. normal con varianza poblacional conocida
+
+1- ¿Qué parámetro vamos a estimar? En este caso `\(\mu\)`
+
+2- Estimador con distribución conocida
+
+3- Definir un estadñistico de prueba con distribución conocida
+
+.center[
+&lt;img src="img/ic_1.png" width="65%"/&gt;
+]
+---
+### IC para la media poblacional de una v.a. normal con varianza poblacional conocida
+
+.center[
+&lt;img src="img/ic_2.png" width="100%"/&gt;
+]
+
+.center[
+`\(\LARGE\overline{x} \pm Z_{1-\frac{\alpha}{2}}* \frac{\sigma}{\sqrt{n}}\)`
+]
+
+---
+#Ejercitación
+
+Ejercicio 1- La Cámara de Comercio desea tener una estimación del valor medio del alquiler de un
+departamento de un ambiente. Una muestra aleatoria de 40 departamentos de estas características arrojó como resultado una media mensual de los alquileres (de esta muestra) es de
+$323. Se conoce en el mercado que la desviación estándar de la variable “alquiler mensual de un
+depto. de 1 amb” es $25.
+
+a) Determine un intervalo de confianza de 99% para la media del alquiler de la población total de departamentos de un ambiente.
+
+¿cuál es la variable x?¿Distribución?
+---
+
+---
+#Ejercitacion
+
+Ejercicio 2- La Asociación de Empresarios Gastronómicos reunió información sobre la cantidad de veces que los
+matrimonios jóvenes comen fuera de casa a la semana. Una encuesta de 60 parejas indicó que la cantidad
+media de veces que fuera de casa por semana fue 2.76 comidas semanales. Mediante estudios previos se
+pude afirmar que la desviación standard poblacional de la variable “cant de veces por semana que las
+parejas jóvenes comen afuera” es de 0.75. Construya el intervalo de confianza de 90 % de la media
+poblacional.
+
+---
+### IC para la media poblacional de una v.a. normal con varianza poblacional desconocida
+
+En la práctica es habitual que TODOS los parametros poblacionales son desconocidos, es decir que ni el promedio μ ni el desvío estándar σ son conocidos.
+
+--
+
+Se demuestra que la media muestral en estos casos ajusta a una distribución conocida como **.orange[t de Student]**
+
+.center[
+&lt;img src="img/t_student_1.png" width="75%"/&gt;
+]
+
+---
+# Distribución de t-student
+
+.center[
+&lt;img src="img/t_student_1.png" width="65%"/&gt;
+]
+
+Los **.orange[GL indican la cantidad de datos independientes]**, es decir el numero de observaciones de la varibal menos el número de restricciones que verifican
+
+A medida que aumentan los GL mas se asemejan a la normal estándar (porque s converge a σ )
+---
+### IC para la media poblacional de una v.a. normal con varianza poblacional desconocida
+
+.center[
+&lt;img src="img/t_student.png" width="100%"/&gt;
+]
+---
+
+### IC para la media poblacional de una v.a. normal con varianza poblacional desconocida
+
+.center[
+
+`\(\LARGE P(LI&lt; \theta &lt; LS)= 1 - \alpha\)`
+
+`\(\LARGE \overline{x} \pm t_{(n-1; 1-\frac{\alpha}{2})} * \frac{\ s}{\sqrt{n}}\)`
+]
+
+---
+# Ejercitación
+
+Las ventas de una revista semanal han sido las siguientes (en miles) en las últimas cuatro semanas: 15,4 -18,5 - 16,3 - 19,2.
+
+a) Estimar la venta media semanal con un 95% de con
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -131,7 +331,7 @@ Construir modelos estadísticos y efectuar predicciones
 "highlightStyle": "googlecode",
 "highlightLines": true,
 "countIncrementalSlides": false,
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
