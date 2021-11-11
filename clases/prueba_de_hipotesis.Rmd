@@ -18,7 +18,7 @@ output:
           <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
           </div>
         </div>
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 ---
 
 ```{r setup, include = FALSE}
@@ -343,3 +343,6 @@ a) Asumiendo en un 10% la probabilidad de rechazarla indebidamente, ¿puede acep
 El espesor óptimo para obleas de silicio utilizadas en cierto tipo de circuito integrado debe ser superior a 245 nm. Un fabricante de productos electrónicos revisa todas las entregas eligiendo una muestra de 50 obleas del lote y estimando su espesor promedio. En la última entrega obtuvo una media de espesor de 246.18 nm y una desviación estándar de 3.6 nm.
 
 “Si el espesor medio del lote fuese 248nm, que probabilidad hay de que el fabricante acepte el lote”. ¿A qué probabilidad se refiere?
+
+---
+
